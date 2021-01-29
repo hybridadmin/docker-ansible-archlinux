@@ -1,4 +1,5 @@
 # Archlinux Docker Images with ansible and systemd
+![Build](https://github.com/hybridadmin/docker-ansible-archlinux/workflows/Build/badge.svg?branch=main) ![Docker Pulls](https://img.shields.io/docker/pulls/hybridadmin/ansible-archlinux)
 
 > Archlinux Docker images to be used for testing ansible playbooks and roles.
 
