@@ -1,6 +1,6 @@
-# CentOS Docker Images with ansible and systemd
+# Archlinux Docker Images with ansible and systemd
 
-> CentOS Docker images to be used for testing ansible playbooks and roles.
+> Archlinux Docker images to be used for testing ansible playbooks and roles.
 
 ## Quick reference
 
