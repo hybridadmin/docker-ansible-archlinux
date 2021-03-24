@@ -14,13 +14,14 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 RUN pacman --noconfirm -Sy git python-pip sudo openssh gawk unzip tar rsync && pacman --noconfirm -Scc
 
 # Install ansible
-RUN python -m pip install --upgrade pip && python -m pip install ansible
+RUN python -m pip install --upgrade pip && python -m pip install ansible pymysql
 
 # Cleanup __pycache__ folders
 RUN find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf
 
-RUN mkdir /etc/ansible && \
-    echo -e '[local]\nlocalhost ansible_connection=local' > /etc/ansible/hosts
+RUN mkdir /etc/ansible
+ADD https://raw.githubusercontent.com/hybridadmin/misc-scripts/master/linux/ansible/hosts /etc/ansible/hosts
+ADD https://raw.githubusercontent.com/hybridadmin/misc-scripts/master/linux/ansible/ansible.cfg etc/ansible/ansible.cfg
 
 VOLUME ["/sys/fs/cgroup"]
 
