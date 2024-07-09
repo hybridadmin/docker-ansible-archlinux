@@ -14,7 +14,7 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 RUN pacman --noconfirm -Sy git python-pip sudo openssh gawk unzip tar rsync && pacman --noconfirm -Scc
 
 # Install ansible
-RUN pip install --upgrade pip && pip install --break-system-packages ansible pymysql yamllint ansible-lint
+RUN pip install --break-system-packages ansible pymysql yamllint ansible-lint
 
 # Cleanup __pycache__ folders
 RUN find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf
