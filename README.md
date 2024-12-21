@@ -1,6 +1,6 @@
 # Archlinux Docker Images with ansible and systemd
 
-![Build](https://github.com/hybridadmin/docker-ansible-archlinux/workflows/Build/badge.svg?branch=main) ![Docker Pulls](https://img.shields.io/docker/pulls/hybridadmin/ansible-archlinux)
+![Build](https://img.shields.io/github/actions/workflow/status/hybridadmin/docker-ansible-archlinux/build.yml) ![Docker Pulls](https://img.shields.io/docker/pulls/hybridadmin/ansible-archlinux)
 
 > Archlinux Docker images to be used for testing ansible playbooks and roles.
 
@@ -36,7 +36,7 @@ docker pull hybridadmin/ansible-archlinux:latest
 Run a container using the image with the following command:
 
 ```console
-docker run -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro hybridadmin/ansible-archlinux:latest
+docker run -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:rw --cgroupns=host hybridadmin/ansible-archlinux:latest
 ```
 
 Use ansible inside the container:
